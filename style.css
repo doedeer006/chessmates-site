@@ -7,7 +7,7 @@
 :root {
   --navy: #22325C;
   --navy-deep: #182344;
-  --cream: #FFF8E7;
+  --cream: #E3F2FD; /* sky blue — Ash wants light blue backgrounds everywhere */
   --gold: #F2B705;
   --gold-dark: #D9A404;
   --white: #FFFFFF;
@@ -524,5 +524,4 @@ footer .todo {
   }
 }
 
-/* Launch copy: editorial placeholders are hidden until Ash fills them in the source. */
 .todo { display: none !important; }
