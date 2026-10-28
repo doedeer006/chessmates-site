@@ -600,4 +600,46 @@ footer .todo {
 .price-card .btn { margin-top: 10px; display: inline-block; }
 .price-note { text-align: center; margin-top: 20px; color: var(--navy); }
 
+/* ---- FAQ accordions ---- */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.faq-list details {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(34, 50, 92, 0.08);
+  margin-bottom: 14px;
+  padding: 4px 22px;
+}
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--navy);
+  font-size: 1.05rem;
+  padding: 16px 0;
+  list-style: none;
+  position: relative;
+  padding-right: 34px;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: '▾';
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+.faq-list details[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.faq-list details p {
+  margin: 0 0 18px;
+  color: var(--ink-soft, #44507a);
+  line-height: 1.6;
+}
+
 .todo { display: none !important; }
