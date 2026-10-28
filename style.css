@@ -580,4 +580,24 @@ footer .todo {
   .why-row > img { height: 84px; }
 }
 
+/* ============ Pricing ============ */
+.price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 26px; }
+@media (max-width: 620px) { .price-grid { grid-template-columns: 1fr; } }
+.price-card {
+  background: var(--white); border-radius: 22px; padding: 26px 24px; text-align: center;
+  box-shadow: 0 6px 18px rgba(34, 50, 92, 0.12); position: relative;
+}
+.price-best { border: 3px solid var(--gold); }
+.price-flag {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: var(--navy); font-weight: 800; font-size: 0.8rem;
+  padding: 4px 14px; border-radius: 999px;
+}
+.price-card h3 { margin: 0 0 6px; color: var(--navy); }
+.price-big { font-size: 2.6rem; font-weight: 800; color: var(--navy); margin: 4px 0; }
+.price-big span { font-size: 1rem; font-weight: 700; color: #3A4D7A; }
+.price-card p { color: #3A4D7A; }
+.price-card .btn { margin-top: 10px; display: inline-block; }
+.price-note { text-align: center; margin-top: 20px; color: var(--navy); }
+
 .todo { display: none !important; }
