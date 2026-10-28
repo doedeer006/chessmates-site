@@ -1,0 +1,528 @@
+/* ==========================================================================
+   Chess Mates — chessmates.online
+   One stylesheet, zero dependencies, system fonts only.
+   Brand: navy #22325C · cream #FFF8E7 · gold #F2B705
+   ========================================================================== */
+
+:root {
+  --navy: #22325C;
+  --navy-deep: #182344;
+  --cream: #FFF8E7;
+  --gold: #F2B705;
+  --gold-dark: #D9A404;
+  --white: #FFFFFF;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+  --gutter: 16px;
+  --shadow-card: 0 6px 0 rgba(34, 50, 92, 0.12);
+  --shadow-card-hover: 0 10px 0 rgba(34, 50, 92, 0.16);
+}
+
+/* ---- Reset-ish ---- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--navy);
+  font-family: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN",
+    Quicksand, Comfortaa, Manjari, "Arial Rounded MT Bold", Calibri,
+    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  overflow-x: hidden; /* belt-and-braces: no sideways scroll, ever */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--navy);
+}
+
+/* ---- Layout ---- */
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+section {
+  padding: 56px 0;
+}
+
+/* ---- Type ---- */
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4.5vw, 2.25rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.kicker {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+}
+
+.lede {
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  max-width: 38em;
+}
+
+/* Editorial placeholders — loud on purpose so nothing false ships. */
+.todo {
+  display: inline-block;
+  background: #FFE9A8;
+  border: 2px dashed var(--gold-dark);
+  border-radius: 8px;
+  padding: 1px 8px;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+/* ---- Buttons ---- */
+
+.btn {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  border: 3px solid var(--navy);
+  transition: transform 120ms ease, box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 4px 0 var(--navy);
+}
+
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  background: #FFC61A;
+  box-shadow: 0 6px 0 var(--navy);
+}
+
+.btn-navy {
+  background: var(--navy);
+  color: var(--cream);
+  box-shadow: 0 4px 0 var(--navy-deep);
+}
+
+.btn-navy:hover,
+.btn-navy:focus-visible {
+  background: #2C4078;
+  box-shadow: 0 6px 0 var(--navy-deep);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* ---- Hero ---- */
+
+.hero {
+  padding-top: 40px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.hero-logo {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 18px 26px;
+  max-width: 680px;
+  margin: 0 auto 32px;
+}
+
+.hero-logo img {
+  margin: 0 auto;
+}
+
+.hero .lede {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Characters peeking over the fold into the next section */
+.peek-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2vw;
+  margin-top: 36px;
+  margin-bottom: -14px; /* toes dangle over the section edge */
+  pointer-events: none;
+}
+
+.peek-row img {
+  width: clamp(56px, 11vw, 110px);
+  transition: transform 150ms ease;
+  pointer-events: auto;
+}
+
+.peek-row img:nth-child(odd) {
+  transform: rotate(-4deg) translateY(6px);
+}
+
+.peek-row img:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.peek-row img:hover {
+  transform: rotate(0deg) translateY(-8px);
+}
+
+/* ---- Alternating band ---- */
+
+.band {
+  background: var(--navy);
+  color: var(--cream);
+  border-radius: var(--radius-lg);
+  margin-left: var(--gutter);
+  margin-right: var(--gutter);
+}
+
+.band h2,
+.band h3 {
+  color: var(--cream);
+}
+
+.band a {
+  color: var(--gold);
+}
+
+.band .kicker {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+@media (min-width: 1072px) {
+  .band {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---- Cards ---- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.card {
+  background: var(--white);
+  border: 3px solid var(--navy);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card img {
+  width: 84px;
+  margin: 0 auto 14px;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+/* Cards that sit on the navy band */
+.band .card {
+  background: var(--cream);
+  border-color: var(--gold);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.25);
+  color: var(--navy);
+}
+
+.band .card h3 {
+  color: var(--navy);
+}
+
+/* ---- Levels ---- */
+
+.level-list {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.level-list li {
+  background: var(--cream);
+  color: var(--navy);
+  border-radius: var(--radius-md);
+  padding: 16px 20px 16px 18px;
+  border-left: 10px solid;
+  text-align: left;
+}
+
+.level-bronze {
+  border-color: #B4722C;
+}
+
+.level-silver {
+  border-color: #9AA5B1;
+}
+
+.level-gold {
+  border-color: var(--gold);
+}
+
+.level-list strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+/* ---- Where we are ---- */
+
+.place-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.place {
+  background: var(--white);
+  border: 3px solid var(--navy);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  transition: transform 150ms ease;
+}
+
+.place:hover {
+  transform: translateY(-3px);
+}
+
+.place .badge {
+  display: inline-block;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 12px;
+  margin-bottom: 8px;
+}
+
+.badge-now {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.badge-soon {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.place h3 {
+  margin-bottom: 0.2em;
+}
+
+.place p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* ---- Footer ---- */
+
+footer {
+  background: var(--navy);
+  color: var(--cream);
+  margin-top: 64px;
+  padding: 40px 0 48px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  text-decoration-thickness: 3px;
+}
+
+footer p {
+  margin-bottom: 0.4em;
+}
+
+.footer-small {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+footer .todo {
+  color: var(--navy);
+}
+
+/* ---- Privacy page ---- */
+
+.page-main {
+  padding: 40px 0 64px;
+}
+
+.page-main .wrap {
+  max-width: 760px;
+}
+
+.page-logo {
+  display: block;
+  width: min(420px, 100%);
+  margin: 0 auto 8px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 10px 16px;
+}
+
+.notice {
+  background: #FFE9A8;
+  border: 3px dashed var(--gold-dark);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  font-weight: 700;
+  margin: 24px 0;
+}
+
+.page-main h2 {
+  margin-top: 1.6em;
+  font-size: 1.45rem;
+}
+
+.page-main ul {
+  padding-left: 1.3em;
+}
+
+.page-main li {
+  margin-bottom: 0.4em;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 800;
+}
+
+/* ---- Small screens (≤ 420px keeps everything comfy at 360px) ---- */
+
+@media (max-width: 420px) {
+  body {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-logo {
+    padding: 12px 14px;
+  }
+
+  .peek-row img:nth-child(4),
+  .peek-row img:nth-child(5) {
+    display: none; /* three mates fit nicely at 360px */
+  }
+
+  .card-grid,
+  .place-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .card,
+  .place,
+  .peek-row img {
+    transition: none;
+  }
+}
+
+/* Launch copy: editorial placeholders are hidden until Ash fills them in the source. */
+.todo { display: none !important; }
